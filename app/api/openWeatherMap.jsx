@@ -13,8 +13,9 @@ module.exports = {
       } else {
         return res.data.main.temp;
       }
-    }, function (res) {
-      throw new Error(res.data.message); //returns open weathers error message if it sends one
+    }, function (err) {
+      throw new Error('Unable to fetch weather for that location');
+      //throw new Error('res.data.message'); //returns open weathers error message if it sends one
     });
   }
 }
